@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author             = { "David F. Muir V" => "dfmuir@gmail.com" }
   s.platform     = :ios, '7.0'
   s.source       = { :git => "https://github.com/lexiaoyao20/KINWebBrowser.git", :tag => s.version.to_s }
-  s.source_files  = 'KINWebBrowser_fm', 'KINWebBrowser_fm/**/*.{h,m}'
+  s.source_files  = 'KINWebBrowser', 'KINWebBrowser/**/*.{h,m}'
   s.resources = "Assets/*.bundle"
   s.requires_arc = true
 
