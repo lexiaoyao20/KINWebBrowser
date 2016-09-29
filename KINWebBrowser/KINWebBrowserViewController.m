@@ -405,7 +405,14 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
 }
 
 - (void)setupToolbarItems {
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"KINWebBrowser" ofType:@"bundle"]];
+    NSBundle *mainBundle = [NSBundle bundleForClass:[KINWebBrowserViewController class]];
+    NSString *bundlePath = [mainBundle pathForResource:@"KINWebBrowser" ofType:@"bundle"];
+    // Check to see if the resource bundle exists inside the top level bundle
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    
+    if (bundle == nil) {
+        bundle = mainBundle;
+    }
     
     self.refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshButtonPressed:)];
     self.stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopButtonPressed:)];

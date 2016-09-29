@@ -4,7 +4,6 @@ use_frameworks!
 
 target "KINWebBrowserExample" do
     
-#pod 'KINWebBrowser_fm', :podspec => '../KINWebBrowser_fm.podspec'
 pod 'KINWebBrowser_fm', :path => "../../KINWebBrowser/"
 
 end
